@@ -1,0 +1,6 @@
+django_debug_toolbar
+django
+djangorestframework
+drf_spectacular
+rest_framework_simplejwt
+pillow
