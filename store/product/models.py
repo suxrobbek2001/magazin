@@ -1,5 +1,6 @@
 import os
 
+from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import PROTECT
 
@@ -30,9 +31,16 @@ class Product(models.Model):
 
 class Cart(models.Model):
     product = models.ForeignKey(Product, on_delete=PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default=1, related_name='carts')
 
     def __str__(self):
-        return self.product
+        return  f"{self.product.name} - {"user->"} {self.user.username}"
+
+    # @classmethod
+    # def calculate_total(cls, user):
+    #     """Calculate the total sum of products in the cart for a specific user."""
+    #     total = sum(cart.product.price for cart in cls.objects.filter(user=user))
+    #     return total
 
 
 

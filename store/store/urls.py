@@ -25,11 +25,12 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from rest_framework.routers import DefaultRouter
 from django.conf.urls.static import static
-from product.views import CategoryViewSet, ProductViewSet
+from product.views import CategoryViewSet, ProductViewSet, CartViewSet
 
 router = DefaultRouter()
 router.register(r'category', CategoryViewSet)
 router.register(r'product', ProductViewSet)
+router.register(r'cart', CartViewSet, basename='cart')
 
 urlpatterns = [
     path('', include(router.urls)),

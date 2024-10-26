@@ -2,5 +2,9 @@ django_debug_toolbar
 django
 djangorestframework
 drf_spectacular
+djangorestframework-simplejwt
 rest_framework_simplejwt
 pillow
+django_cleanup
+psycopg2
+psycopg2-binary
